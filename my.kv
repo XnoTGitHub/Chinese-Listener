@@ -1,0 +1,213 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+
+<MainWindow>:
+    name: "main"
+
+    answer: answer
+    message: message
+    button: button
+
+    GridLayout:
+        cols:2
+        size: root.width, root.height
+
+        Button:
+            text: "<"
+            width: root.width/15
+            size_hint_x: None
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "right"
+        GridLayout:
+            padding : 10,10
+            spacing: 10, 10
+            cols:1    
+            Label:
+                id: message
+                #color: 1,0,1,1
+                text: "WHAT HAVE I SAID?"
+            TextInput:
+                id: answer
+                multinline:False
+
+            Button:
+                id: button
+                text:"Start Game"
+                on_press: root.btn()
+
+
+<SecondWindow>:
+    name: "second"
+
+    GridLayout:
+        cols:2
+        GridLayout:
+            cols: 2
+            padding : 10,10
+            spacing: 10, 10
+            #row_default_height: '30dp'
+
+            Label:
+                text: 'Greeting 1'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check1
+                on_active: root.checkbox_click(self, 0, self.active)
+                active: True
+
+
+            Label:
+                text: 'Numbers'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check2
+                on_active: root.checkbox_click(self, 1, self.active)
+                active: True
+
+            Label:
+                text: 'Name'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : 'check3'
+                on_active: root.checkbox_click(self, 2, self.active)
+                active: True
+
+            Label:
+                text: 'Greeting 2'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check4
+                on_active: root.checkbox_click(self, 3, self.active)
+                active: True
+
+            Label:
+                text: 'Food 1'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check5
+                on_active: root.checkbox_click(self, 4, self.active)
+                active: True
+
+
+            Label:
+                text: 'Occupation'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check6
+                on_active: root.checkbox_click(self, 5, self.active)
+                active: True
+
+            Label:
+                text: 'Contact'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check7
+                on_active: root.checkbox_click(self, 6, self.active)
+                active: True
+
+
+            Label:
+                text: 'Nation'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check8
+                on_active: root.checkbox_click(self, 7, self.active)
+                active: True
+
+            Label:
+                text: 'Greeting 3'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check9
+                on_active: root.checkbox_click(self, 8, self.active)
+                active: True
+
+            Label:
+                text: 'Location 1'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check10
+                on_active: root.checkbox_click(self, 9, self.active)
+                active: True
+
+            Label:
+                text: 'Phrases 1'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check11
+                on_active: root.checkbox_click(self, 10, self.active)
+                active: True
+
+            Label:
+                text: 'Family 1'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check12
+                on_active: root.checkbox_click(self, 11, self.active)
+                active: True
+            Label:
+                text: 'Transportation'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check13
+                on_active: root.checkbox_click(self, 12, self.active)
+                active: True
+
+            Label:
+                text: 'Family 2'
+                text_size: self.size
+                valign: 'middle'
+
+            CheckBox:
+                #group: 'check'
+                id : check14
+                on_active: root.checkbox_click(self, 13, self.active)
+                active: True
+        Button:
+            text: ">"
+            width: root.width/15
+            size_hint_x: None
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
